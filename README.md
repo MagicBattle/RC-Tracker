@@ -1,8 +1,10 @@
 # RC Tracker
 
-A single-page tracker for the sealed Pokémon products RC opened.
+RC opened 13 sealed Pokémon boxes. This site tracks what they'd be worth today if they were still sealed.
 
-## Run
+Live: https://magicbattle.github.io/RC-Tracker/
+
+## Running it locally
 
 ```sh
 npm install
@@ -10,35 +12,24 @@ npm run prices
 npm run dev
 ```
 
-`npm run build` creates `dist/`. `npm test` checks inventory totals and comparisons.
+`npm run build` builds the site into `dist/` and `npm test` runs the tests.
 
-## Pricing
+## Prices
 
-TCGplayer market prices come from TCGCSV, once per day. Nine exact product IDs cover 13 boxes. No API key is needed. The updater rejects missing prices and writes only complete snapshots. A failed update leaves the last good snapshot intact. The page marks snapshots older than 48 hours as overdue.
+Prices are TCGplayer market prices, pulled from [TCGCSV](https://tcgcsv.com/) once a day. There are 9 products covering the 13 boxes. If any price is missing, the update is skipped and the last good day stays.
 
-The GitHub Actions workflow runs daily at 16:27 UTC, after it is pushed to the default branch with Actions enabled. It can also be run manually. GitHub may delay schedules or disable inactive public-repository schedules. The page reloads the saved data hourly; the hosted page reads the public GitHub history directly, with the bundled snapshot as a fallback. No daily redeploy is needed.
+A GitHub Action grabs new prices every day around 16:27 UTC and commits them, then the site rebuilds. You can also run it by hand from the Actions tab.
 
-Sealed value = market price × quantity. Missed gross profit = sealed value − MSRP. Pulls, selling fees and shipping are excluded. Values can decrease. History starts with the first recorded observation; missing comparisons are not fabricated.
+How the numbers work:
 
-MSRP assumptions: SPC $99.99, Pokémon Center ETB $59.99, Perfect Order booster box $161.64. Total $961.52 with zero Delaware sales tax. Receipt verification remains outstanding.
+- Sealed value = market price × quantity
+- Missed profit = sealed value − what was paid (MSRP)
+- Fees, shipping and whatever got pulled aren't counted
 
-Sources:
-- https://tcgcsv.com/
-- https://seller.tcgplayer.com/blog/ascended-heroes-quick-facts
-- https://www.poke-life.com/sets/perfect-order/booster-box/
-- https://revenue.delaware.gov/frequently-asked-questions/gross-receipts-tax-faqs/
+What was paid: SPC $99.99, Pokémon Center ETB $59.99, Perfect Order booster box $161.64. $961.52 total, no sales tax (Delaware).
 
-## Deployment
-
-Deploy `dist/` using any static host, with build command `npm ci && npm run build`. Connect the host to the main branch so the daily price commits rebuild the site. No server or paid pricing API is required. Hosting and Actions availability depend on the account plan.
-
-
-Opening date: August 19, 2026 (reported by Michael). Historical observations are from TCGCSV daily archives, sampled weekly with daily points for the most recent week. Run `python scripts/backfill.py` with py7zr installed to reproduce the backfill; downloaded archives are cached. The current preview reads local history while publication is on hold.
-
-## Design
-
-Ash black, bone white and one ember accent for money that burned, set in Instrument Serif with Geist and Geist Mono. The hero is a WebGL scene (three.js): a curtain of firelight rises from the floor, $20 bills ride the heat up through it and burn into ash, and pulled cards drift in the dark behind. The headline counts up the missed gross profit. Below it, the price history chart (drag or arrow keys to move through time) and the box-by-box table share one selected date. `src/AshScene.jsx` holds the scene and `src/Timeline.jsx` holds the chart. Scrolling down, a sentence lights up word by word, then the nine products are dealt onto a pile like cards while a running total of missed profit counts up (`src/Story.jsx`). The chart draws itself in when it enters the screen, and the page closes on a large wordmark. Motion follows a strong ease-out curve and respects reduced motion.
+The boxes were opened August 19, 2026. Older history comes from TCGCSV's daily archives. `scripts/backfill.py` rebuilds it (needs `py7zr`).
 
 ## Product photos
 
-Cards and the table show each product's official TCGplayer photo, matched by product ID. Run `npm run images` once to save them to `public/products/` so the site does not depend on TCGplayer's CDN. Without the saved copies, the page loads them from the CDN, and if that fails a lettered placeholder shows instead.
+`npm run images` saves the product photos into `public/products/`. If one is missing the page falls back to TCGplayer's image, then to a placeholder.
