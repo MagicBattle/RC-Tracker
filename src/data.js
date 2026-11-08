@@ -1,6 +1,7 @@
 export const inventory = [
   {
     id: 622770,
+    released: "2025-03-09",
     color: "#FF8FD0",
     short: "Prismatic Evolutions SPC",
     group: 23821,
@@ -11,6 +12,7 @@ export const inventory = [
   },
   {
     id: 668497,
+    released: "2026-01-30",
     color: "#7B5CFF",
     short: "Ascended Heroes ETB",
     group: 24541,
@@ -21,6 +23,7 @@ export const inventory = [
   },
   {
     id: 630687,
+    released: "2025-07-18",
     color: "#9AA6C7",
     short: "Black Bolt ETB",
     group: 24325,
@@ -31,6 +34,7 @@ export const inventory = [
   },
   {
     id: 630688,
+    released: "2025-07-18",
     color: "#FF9F45",
     short: "White Flare ETB",
     group: 24326,
@@ -41,6 +45,7 @@ export const inventory = [
   },
   {
     id: 654135,
+    released: "2025-11-14",
     color: "#FF5A3C",
     short: "Phantasmal Flames ETB",
     group: 24448,
@@ -51,6 +56,7 @@ export const inventory = [
   },
   {
     id: 644282,
+    released: "2025-09-26",
     color: "#3FA2FF",
     short: "Mega Evolution ETB, Lucario",
     group: 24380,
@@ -61,6 +67,7 @@ export const inventory = [
   },
   {
     id: 648415,
+    released: "2025-09-26",
     color: "#38E1B0",
     short: "Mega Evolution ETB, Gardevoir",
     group: 24380,
@@ -71,6 +78,7 @@ export const inventory = [
   },
   {
     id: 672404,
+    released: "2026-03-27",
     color: "#FFD23F",
     short: "Perfect Order ETB",
     group: 24587,
@@ -81,6 +89,7 @@ export const inventory = [
   },
   {
     id: 672394,
+    released: "2026-03-27",
     color: "#D99A1E",
     short: "Perfect Order booster box",
     group: 24587,
@@ -93,13 +102,26 @@ export const inventory = [
 export const cents = (n) => Math.round(n * 100);
 export const cost =
   inventory.reduce((sum, p) => sum + cents(p.msrp) * p.qty, 0) / 100;
-export function total(prices) {
+// First day tracked: the release of the oldest product.
+export const startedOn = inventory.reduce(
+  (a, p) => (p.released < a ? p.released : a),
+  inventory[0].released,
+);
+export const isOut = (p, date) => !date || date >= p.released;
+// A product that was not out yet on that date counts at MSRP (no gain yet).
+export function total(prices, date) {
   if (
-    inventory.some((p) => !Number.isFinite(prices[p.id]) || prices[p.id] <= 0)
+    inventory.some(
+      (p) =>
+        isOut(p, date) && (!Number.isFinite(prices[p.id]) || prices[p.id] <= 0),
+    )
   )
     throw new Error("Incomplete price snapshot");
   return (
-    inventory.reduce((sum, p) => sum + cents(prices[p.id]) * p.qty, 0) / 100
+    inventory.reduce(
+      (sum, p) => sum + cents(isOut(p, date) ? prices[p.id] : p.msrp) * p.qty,
+      0,
+    ) / 100
   );
 }
 export function changeSince(history, days) {
@@ -110,6 +132,8 @@ export function changeSince(history, days) {
   const date = target.toISOString().slice(0, 10);
   const base = history.find((p) => p.date === date);
   return base
-    ? Math.round((total(last.prices) - total(base.prices)) * 100) / 100
+    ? Math.round(
+        (total(last.prices, last.date) - total(base.prices, base.date)) * 100,
+      ) / 100
     : null;
 }

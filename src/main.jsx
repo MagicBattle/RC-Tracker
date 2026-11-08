@@ -4,7 +4,7 @@ import "@fontsource/instrument-serif/400.css";
 import "@fontsource/instrument-serif/400-italic.css";
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
-import { inventory, cost, total, changeSince } from "./data";
+import { inventory, cost, total, changeSince, isOut } from "./data";
 import { money, shortDate, longDate } from "./format";
 import AshScene from "./AshScene";
 import ProductImg from "./ProductImg";
@@ -16,6 +16,7 @@ import "./style.css";
 const RANGES = [
   ["1W", 7],
   ["1M", 30],
+  ["1Y", 365],
   ["All", Infinity],
 ];
 const BOX_COUNT = inventory.reduce((n, p) => n + p.qty, 0);
@@ -52,7 +53,7 @@ function App() {
       });
       if (!r.ok) throw Error();
       const d = await r.json();
-      d.history.forEach((s) => total(s.prices));
+      d.history.forEach((s) => total(s.prices, s.date));
       if (!d.history.length) throw Error();
       setData(d);
       setError("");
@@ -73,8 +74,8 @@ function App() {
   const last = history.at(-1);
   const selected = history.find((s) => s.date === picked) ?? last;
   const selIndex = selected ? history.indexOf(selected) : -1;
-  const sealed = selected ? total(selected.prices) : 0;
-  const latest = last ? total(last.prices) : 0;
+  const sealed = selected ? total(selected.prices, selected.date) : 0;
+  const latest = last ? total(last.prices, last.date) : 0;
   const stale = last && Date.now() - Date.parse(last.fetchedAt) > 48 * 3600000;
   const missedH = useTween(
     Math.max(latest - cost, 0),
@@ -85,7 +86,7 @@ function App() {
   const all = history.map((s) => ({
     date: s.date,
     time: Date.parse(s.date + "T12:00:00Z"),
-    value: total(s.prices),
+    value: total(s.prices, s.date),
   }));
   const days = RANGES.find(([name]) => name === range)[1];
   const chart = all
@@ -129,11 +130,12 @@ function App() {
   const rows = selected
     ? inventory
         .map((p) => {
-          const now = selected.prices[p.id];
+          const out = isOut(p, selected.date);
+          const now = out ? selected.prices[p.id] : null;
           return {
             ...p,
             now,
-            missed: Math.round((now - p.msrp) * p.qty * 100) / 100,
+            missed: out ? Math.round((now - p.msrp) * p.qty * 100) / 100 : 0,
           };
         })
         .sort((a, b) => b.missed - a.missed)
@@ -147,7 +149,8 @@ function App() {
   if (selIndex > 0)
     deltas.push([
       "Since " + shortDate(history[0].date),
-      Math.round((sealed - total(history[0].prices)) * 100) / 100,
+      Math.round((sealed - total(history[0].prices, history[0].date)) * 100) /
+        100,
     ]);
 
   const latestRows = last
@@ -162,8 +165,9 @@ function App() {
         })
         .sort((a, b) => b.missed - a.missed)
     : [];
-  const floorMissed = all.length
-    ? Math.floor(Math.min(...all.map((p) => p.value - cost)) / 100) * 100
+  const sinceRip = all.filter((p) => p.date >= data.openedOn);
+  const floorMissed = sinceRip.length
+    ? Math.floor(Math.min(...sinceRip.map((p) => p.value - cost)) / 100) * 100
     : 0;
   useReveal([data, range, metric]);
 
@@ -272,7 +276,8 @@ function App() {
             </h2>
             <p>
               What all {BOX_COUNT} boxes would sell for sealed, from TCGplayer
-              market prices. Drag the chart to move through time.
+              market prices, starting the day the oldest one came out. Drag the
+              chart to move through time.
             </p>
           </div>
           <div className="toolbar" data-reveal style={{ "--d": "120ms" }}>
@@ -409,8 +414,10 @@ function App() {
                     </td>
                     <td>{p.qty}</td>
                     <td>{money(p.msrp)}</td>
-                    <td>{money(p.now)}</td>
-                    <td>{(p.now / p.msrp).toFixed(1)}×</td>
+                    <td>{p.now === null ? "Not out yet" : money(p.now)}</td>
+                    <td>
+                      {p.now === null ? "" : (p.now / p.msrp).toFixed(1) + "×"}
+                    </td>
                     <td>
                       <span className="bar">
                         <span
@@ -431,9 +438,10 @@ function App() {
       <footer id="method" className="footer">
         <p>
           Sealed value is the TCGplayer market price times the number of boxes.
-          Missed gross profit is sealed value minus MSRP. Pulls, selling fees
-          and shipping are not counted. MSRP is assumed from public sources, not
-          from receipts, with zero Delaware sales tax. Prices via{" "}
+          Missed gross profit is sealed value minus MSRP. Before a product came
+          out, it counts at MSRP. Pulls, selling fees and shipping are not
+          counted. MSRP is assumed from public sources, not from receipts, with
+          zero Delaware sales tax. Prices via{" "}
           <a href="https://tcgcsv.com/">TCGCSV</a>.
         </p>
         <div className="wordmark" aria-hidden="true">

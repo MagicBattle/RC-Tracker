@@ -1,5 +1,5 @@
 import React, { useEffect, useId, useRef, useState } from "react";
-import { money, shortDate } from "./format";
+import { money, shortDate, monthYear } from "./format";
 
 function useWidth() {
   const ref = useRef(null);
@@ -166,7 +166,9 @@ export default function Timeline({
               y={height - 8}
               textAnchor={i === 0 ? "start" : i === 4 ? "end" : "middle"}
             >
-              {shortDate(Math.round(t))}
+              {t1 - t0 > 180 * 86400000
+                ? monthYear(Math.round(t))
+                : shortDate(Math.round(t))}
             </text>
           ))}
           <path d={area} fill={`url(#${gradId})`} />

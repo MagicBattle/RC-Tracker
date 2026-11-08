@@ -1,5 +1,5 @@
 import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
-import { inventory, total } from "../src/data.js";
+import { inventory, total, startedOn } from "../src/data.js";
 const root = new URL("../public/data/", import.meta.url);
 async function get(path) {
   const response = await fetch("https://tcgcsv.com/tcgplayer/3/" + path, {
@@ -51,6 +51,7 @@ const output = {
   source: "TCGplayer market via TCGCSV",
   sourceUrl: "https://tcgcsv.com/",
   openedOn: "2026-08-19",
+  startedOn,
   history,
 };
 await writeFile(

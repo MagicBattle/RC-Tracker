@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { inventory, cost, total, changeSince } from "../src/data.js";
+import { inventory, cost, total, changeSince, startedOn } from "../src/data.js";
 const prices = Object.fromEntries(inventory.map((p) => [p.id, 100]));
 test("inventory includes thirteen boxes and reconciles MSRP", () => {
   assert.equal(
@@ -22,4 +22,10 @@ test("changes require an actual comparison date and allow falling prices", () =>
   assert.equal(changeSince(history, 7), -20);
   assert.equal(changeSince(history, 1), null);
   assert.equal(changeSince([], 365), null);
+});
+test("products not out yet count at MSRP", () => {
+  assert.equal(startedOn, "2025-03-09");
+  const early = { 622770: 500 };
+  assert.equal(total(early, "2025-03-09"), 961.52 - 99.99 * 2 + 1000);
+  assert.throws(() => total(early, "2025-07-18"));
 });

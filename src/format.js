@@ -20,3 +20,10 @@ export const longDate = (d) =>
     year: "numeric",
     timeZone: "UTC",
   });
+
+export const monthYear = (d) =>
+  toDate(d).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });

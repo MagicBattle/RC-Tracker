@@ -4,6 +4,998 @@
   "openedOn": "2026-08-19",
   "history": [
     {
+      "date": "2025-03-09",
+      "prices": {
+        "622770": 522.31
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-03-09.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-03-16",
+      "prices": {
+        "622770": 491.01
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-03-16.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-03-23",
+      "prices": {
+        "622770": 458.44
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-03-23.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-03-30",
+      "prices": {
+        "622770": 456.79
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-03-30.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-04-06",
+      "prices": {
+        "622770": 453.03
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-04-06.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-04-13",
+      "prices": {
+        "622770": 368.39
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-04-13.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-04-20",
+      "prices": {
+        "622770": 347.28
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-04-20.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-04-27",
+      "prices": {
+        "622770": 298.74
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-04-27.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-05-04",
+      "prices": {
+        "622770": 282.16
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-05-04.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-05-11",
+      "prices": {
+        "622770": 257.67
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-05-11.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-05-18",
+      "prices": {
+        "622770": 239.98
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-05-18.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-05-25",
+      "prices": {
+        "622770": 219.47
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-05-25.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-06-01",
+      "prices": {
+        "622770": 220.76
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-06-01.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-06-08",
+      "prices": {
+        "622770": 200.68
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-06-08.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-06-15",
+      "prices": {
+        "622770": 197.86
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-06-15.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-06-22",
+      "prices": {
+        "622770": 195.09
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-06-22.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-06-29",
+      "prices": {
+        "622770": 192.27
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-06-29.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-07-06",
+      "prices": {
+        "622770": 199.48
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-07-06.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-07-13",
+      "prices": {
+        "622770": 215.51
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-07-13.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-07-18",
+      "prices": {
+        "622770": 206.1,
+        "630687": 139.81,
+        "630688": 138.66
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-07-18.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-07-20",
+      "prices": {
+        "622770": 208.11,
+        "630687": 177.86,
+        "630688": 149.49
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-07-20.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-07-27",
+      "prices": {
+        "622770": 211.27,
+        "630687": 171.91,
+        "630688": 151.5
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-07-27.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-08-03",
+      "prices": {
+        "622770": 208.99,
+        "630687": 169.65,
+        "630688": 159.4
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-08-03.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-08-10",
+      "prices": {
+        "622770": 220.31,
+        "630687": 179.28,
+        "630688": 162.99
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-08-10.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-08-17",
+      "prices": {
+        "622770": 220.18,
+        "630687": 169.25,
+        "630688": 156.85
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-08-17.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-08-24",
+      "prices": {
+        "622770": 217.14,
+        "630687": 166.66,
+        "630688": 148.02
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-08-24.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-08-31",
+      "prices": {
+        "622770": 228.69,
+        "630687": 176.18,
+        "630688": 152.4
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-08-31.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-09-07",
+      "prices": {
+        "622770": 251.66,
+        "630687": 191.07,
+        "630688": 187.24
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-09-07.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-09-14",
+      "prices": {
+        "622770": 253.84,
+        "630687": 198.78,
+        "630688": 191.73
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-09-14.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-09-21",
+      "prices": {
+        "622770": 297.8,
+        "630687": 236.09,
+        "630688": 197.76
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-09-21.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-09-26",
+      "prices": {
+        "622770": 309.45,
+        "630687": 245.52,
+        "630688": 203.91,
+        "644282": 219.31,
+        "648415": 218.71
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-09-26.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-09-28",
+      "prices": {
+        "622770": 314.65,
+        "630687": 240.51,
+        "630688": 204.3,
+        "644282": 231.87,
+        "648415": 222.44
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-09-28.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-10-05",
+      "prices": {
+        "622770": 320.49,
+        "630687": 239.62,
+        "630688": 209.24,
+        "644282": 274.59,
+        "648415": 244.88
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-10-05.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-10-12",
+      "prices": {
+        "622770": 326.77,
+        "630687": 231.79,
+        "630688": 211.61,
+        "644282": 264.97,
+        "648415": 246.79
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-10-12.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-10-19",
+      "prices": {
+        "622770": 317.2,
+        "630687": 219.93,
+        "630688": 210.57,
+        "644282": 241.88,
+        "648415": 238.39
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-10-19.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-10-26",
+      "prices": {
+        "622770": 309.31,
+        "630687": 208.38,
+        "630688": 201.51,
+        "644282": 227.28,
+        "648415": 220.48
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-10-26.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-11-02",
+      "prices": {
+        "622770": 302.32,
+        "630687": 187.6,
+        "630688": 181.61,
+        "644282": 227.4,
+        "648415": 218.43
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-11-02.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-11-09",
+      "prices": {
+        "622770": 274.76,
+        "630687": 190.88,
+        "630688": 174.67,
+        "644282": 217.2,
+        "648415": 215.63
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-11-09.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-11-14",
+      "prices": {
+        "622770": 261.55,
+        "630687": 191.84,
+        "630688": 169.86,
+        "644282": 205.49,
+        "648415": 209.31,
+        "654135": 388.74
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-11-14.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-11-16",
+      "prices": {
+        "622770": 265.94,
+        "630687": 191.84,
+        "630688": 167.36,
+        "644282": 203.81,
+        "648415": 205.95,
+        "654135": 293.84
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-11-16.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-11-23",
+      "prices": {
+        "622770": 269.03,
+        "630687": 188.42,
+        "630688": 163.97,
+        "644282": 185.64,
+        "648415": 186.47,
+        "654135": 185.22
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-11-23.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-11-30",
+      "prices": {
+        "622770": 266.04,
+        "630687": 177.59,
+        "630688": 149.73,
+        "644282": 174.32,
+        "648415": 175.64,
+        "654135": 196.63
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-11-30.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-12-07",
+      "prices": {
+        "622770": 244.1,
+        "630687": 150.87,
+        "630688": 129.22,
+        "644282": 177.15,
+        "648415": 167.99,
+        "654135": 207.29
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-12-07.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-12-14",
+      "prices": {
+        "622770": 245.5,
+        "630687": 139.15,
+        "630688": 121.96,
+        "644282": 177.2,
+        "648415": 159.62,
+        "654135": 188.54
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-12-14.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-12-21",
+      "prices": {
+        "622770": 243.23,
+        "630687": 159.1,
+        "630688": 137.43,
+        "644282": 170.53,
+        "648415": 153.29,
+        "654135": 164.12
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-12-21.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2025-12-28",
+      "prices": {
+        "622770": 249.91,
+        "630687": 164.53,
+        "630688": 141.04,
+        "644282": 164.66,
+        "648415": 146.44,
+        "654135": 175.71
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2025-12-28.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-01-04",
+      "prices": {
+        "622770": 238.67,
+        "630687": 164.71,
+        "630688": 143.43,
+        "644282": 165.55,
+        "648415": 145.38,
+        "654135": 182.84
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-01-04.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-01-11",
+      "prices": {
+        "622770": 260.87,
+        "630687": 170.95,
+        "630688": 143.87,
+        "644282": 164.47,
+        "648415": 144.99,
+        "654135": 176.54
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-01-11.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-01-18",
+      "prices": {
+        "622770": 244.73,
+        "630687": 174.06,
+        "630688": 148.5,
+        "644282": 167.95,
+        "648415": 147.43,
+        "654135": 178.08
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-01-18.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-01-25",
+      "prices": {
+        "622770": 244.91,
+        "630687": 178.29,
+        "630688": 154.3,
+        "644282": 175.88,
+        "648415": 150.83,
+        "654135": 175.96
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-01-25.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-01-30",
+      "prices": {
+        "622770": 253.5,
+        "630687": 178.9,
+        "630688": 156.07,
+        "644282": 179.41,
+        "648415": 153.71,
+        "654135": 182.48,
+        "668497": 346.66
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-01-30.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-02-01",
+      "prices": {
+        "622770": 246.24,
+        "630687": 174.9,
+        "630688": 156.32,
+        "644282": 180.73,
+        "648415": 155.31,
+        "654135": 188.88,
+        "668497": 344.81
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-02-01.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-02-08",
+      "prices": {
+        "622770": 275.65,
+        "630687": 177.6,
+        "630688": 157.1,
+        "644282": 181.45,
+        "648415": 155.29,
+        "654135": 205.67,
+        "668497": 339.73
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-02-08.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-02-15",
+      "prices": {
+        "622770": 283.79,
+        "630687": 180.46,
+        "630688": 154.7,
+        "644282": 183.84,
+        "648415": 153.58,
+        "654135": 211.16,
+        "668497": 346.76
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-02-15.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-02-22",
+      "prices": {
+        "622770": 292.03,
+        "630687": 178.04,
+        "630688": 158.07,
+        "644282": 181.1,
+        "648415": 161.43,
+        "654135": 206.96,
+        "668497": 239.15
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-02-22.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-03-01",
+      "prices": {
+        "622770": 311.9,
+        "630687": 190.62,
+        "630688": 173.04,
+        "644282": 178.67,
+        "648415": 166.77,
+        "654135": 212.56,
+        "668497": 300.98
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-03-01.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-03-08",
+      "prices": {
+        "622770": 341.72,
+        "630687": 211.02,
+        "630688": 186.87,
+        "644282": 180.47,
+        "648415": 171.3,
+        "654135": 225.72,
+        "668497": 321.45
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-03-08.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-03-15",
+      "prices": {
+        "622770": 364.25,
+        "630687": 237.87,
+        "630688": 193.11,
+        "644282": 184.54,
+        "648415": 175.77,
+        "654135": 241.49,
+        "668497": 326.6
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-03-15.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-03-22",
+      "prices": {
+        "622770": 391.3,
+        "630687": 254.83,
+        "630688": 201.91,
+        "644282": 195.5,
+        "648415": 183.59,
+        "654135": 278.7,
+        "668497": 387.16
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-03-22.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-03-27",
+      "prices": {
+        "622770": 381.7,
+        "630687": 262.83,
+        "630688": 210.15,
+        "644282": 199.25,
+        "648415": 190.67,
+        "654135": 290.42,
+        "668497": 385.02,
+        "672404": 129.67,
+        "672394": 206.99
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-03-27.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-03-29",
+      "prices": {
+        "622770": 356.47,
+        "630687": 264.34,
+        "630688": 210.15,
+        "644282": 207.67,
+        "648415": 192.11,
+        "654135": 296.02,
+        "668497": 383.6,
+        "672404": 134.29,
+        "672394": 212.08
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-03-29.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-04-05",
+      "prices": {
+        "622770": 328.33,
+        "630687": 288.65,
+        "630688": 218.81,
+        "644282": 232.73,
+        "648415": 208.16,
+        "654135": 297.52,
+        "668497": 395.83,
+        "672404": 135.88,
+        "672394": 208.32
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-04-05.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-04-12",
+      "prices": {
+        "622770": 344.3,
+        "630687": 279.74,
+        "630688": 219.83,
+        "644282": 246.3,
+        "648415": 213.64,
+        "654135": 308.02,
+        "668497": 428.86,
+        "672404": 135.68,
+        "672394": 203.21
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-04-12.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-04-19",
+      "prices": {
+        "622770": 352.89,
+        "630687": 280.02,
+        "630688": 220.92,
+        "644282": 245.83,
+        "648415": 213.52,
+        "654135": 314.14,
+        "668497": 464.97,
+        "672404": 135.64,
+        "672394": 200.44
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-04-19.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-04-26",
+      "prices": {
+        "622770": 352.76,
+        "630687": 279.7,
+        "630688": 225.15,
+        "644282": 244.76,
+        "648415": 216.29,
+        "654135": 319.83,
+        "668497": 451.23,
+        "672404": 131.1,
+        "672394": 206.7
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-04-26.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-05-03",
+      "prices": {
+        "622770": 314.36,
+        "630687": 285.38,
+        "630688": 227.74,
+        "644282": 245.87,
+        "648415": 218.08,
+        "654135": 314.0,
+        "668497": 488.59,
+        "672404": 135.1,
+        "672394": 204.69
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-05-03.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-05-10",
+      "prices": {
+        "622770": 306.74,
+        "630687": 293.93,
+        "630688": 234.53,
+        "644282": 291.49,
+        "648415": 219.0,
+        "654135": 363.81,
+        "668497": 506.21,
+        "672404": 134.42,
+        "672394": 211.24
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-05-10.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-05-17",
+      "prices": {
+        "622770": 280.37,
+        "630687": 300.26,
+        "630688": 241.72,
+        "644282": 330.37,
+        "648415": 223.77,
+        "654135": 376.79,
+        "668497": 522.06,
+        "672404": 128.85,
+        "672394": 203.44
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-05-17.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-05-24",
+      "prices": {
+        "622770": 290.59,
+        "630687": 302.33,
+        "630688": 245.78,
+        "644282": 326.37,
+        "648415": 220.68,
+        "654135": 342.84,
+        "668497": 520.65,
+        "672404": 135.68,
+        "672394": 221.31
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-05-24.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-05-31",
+      "prices": {
+        "622770": 302.11,
+        "630687": 298.57,
+        "630688": 253.29,
+        "644282": 334.0,
+        "648415": 221.31,
+        "654135": 338.01,
+        "668497": 512.21,
+        "672404": 143.74,
+        "672394": 216.52
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-05-31.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-06-07",
+      "prices": {
+        "622770": 284.19,
+        "630687": 292.48,
+        "630688": 248.59,
+        "644282": 335.98,
+        "648415": 223.73,
+        "654135": 348.26,
+        "668497": 523.69,
+        "672404": 142.13,
+        "672394": 219.93
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-06-07.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-06-14",
+      "prices": {
+        "622770": 304.66,
+        "630687": 292.01,
+        "630688": 249.61,
+        "644282": 338.53,
+        "648415": 224.49,
+        "654135": 345.97,
+        "668497": 498.64,
+        "672404": 138.99,
+        "672394": 212.6
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-06-14.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-06-21",
+      "prices": {
+        "622770": 304.54,
+        "630687": 295.86,
+        "630688": 251.62,
+        "644282": 334.61,
+        "648415": 223.49,
+        "654135": 336.24,
+        "668497": 457.45,
+        "672404": 139.1,
+        "672394": 220.07
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-06-21.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-06-28",
+      "prices": {
+        "622770": 307.55,
+        "630687": 298.02,
+        "630688": 257.22,
+        "644282": 322.09,
+        "648415": 223.41,
+        "654135": 337.78,
+        "668497": 490.14,
+        "672404": 133.26,
+        "672394": 224.52
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-06-28.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-07-05",
+      "prices": {
+        "622770": 299.85,
+        "630687": 298.03,
+        "630688": 259.46,
+        "644282": 318.89,
+        "648415": 225.93,
+        "654135": 338.37,
+        "668497": 474.82,
+        "672404": 123.26,
+        "672394": 224.43
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-07-05.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-07-12",
+      "prices": {
+        "622770": 292.69,
+        "630687": 296.59,
+        "630688": 261.7,
+        "644282": 294.82,
+        "648415": 226.73,
+        "654135": 336.6,
+        "668497": 462.77,
+        "672404": 121.0,
+        "672394": 216.22
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-07-12.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-07-19",
+      "prices": {
+        "622770": 274.51,
+        "630687": 295.13,
+        "630688": 263.48,
+        "644282": 283.59,
+        "648415": 224.54,
+        "654135": 325.56,
+        "668497": 461.21,
+        "672404": 123.97,
+        "672394": 170.84
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-07-19.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-07-26",
+      "prices": {
+        "622770": 265.62,
+        "630687": 294.13,
+        "630688": 264.85,
+        "644282": 274.55,
+        "648415": 223.0,
+        "654135": 315.3,
+        "668497": 453.83,
+        "672404": 120.85,
+        "672394": 181.28
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-07-26.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-08-02",
+      "prices": {
+        "622770": 270.87,
+        "630687": 292.92,
+        "630688": 265.89,
+        "644282": 261.71,
+        "648415": 220.55,
+        "654135": 311.34,
+        "668497": 416.44,
+        "672404": 118.85,
+        "672394": 173.05
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-08-02.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-08-09",
+      "prices": {
+        "622770": 272.97,
+        "630687": 289.35,
+        "630688": 262.21,
+        "644282": 254.19,
+        "648415": 218.65,
+        "654135": 305.43,
+        "668497": 431.11,
+        "672404": 121.26,
+        "672394": 170.39
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-08-09.ppmd.7z",
+      "historical": true
+    },
+    {
+      "date": "2026-08-16",
+      "prices": {
+        "622770": 262.44,
+        "630687": 282.53,
+        "630688": 256.59,
+        "644282": 241.67,
+        "648415": 210.93,
+        "654135": 296.27,
+        "668497": 425.97,
+        "672404": 120.7,
+        "672394": 168.68
+      },
+      "sourceUrl": "https://tcgcsv.com/archive/tcgplayer/prices-2026-08-16.ppmd.7z",
+      "historical": true
+    },
+    {
       "date": "2026-08-19",
       "prices": {
         "622770": 255.55,
@@ -365,5 +1357,6 @@
         }
       ]
     }
-  ]
+  ],
+  "startedOn": "2025-03-09"
 }

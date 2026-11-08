@@ -28,7 +28,7 @@ How the numbers work:
 
 What was paid: SPC $99.99, Pokémon Center ETB $59.99, Perfect Order booster box $161.64. $961.52 total, no sales tax (Delaware).
 
-The boxes were opened August 19, 2026. Older history comes from TCGCSV's daily archives. `scripts/backfill.py` rebuilds it (needs `py7zr`).
+The boxes were opened August 19, 2026, but tracking starts March 9, 2025, the first day the oldest box (the Prismatic Evolutions SPC) had a price. Before a box came out, it counts at what was paid for it, so it adds nothing to missed profit until then. Older history comes from TCGCSV's daily archives. `scripts/backfill.py` rebuilds it (needs `py7zr`).
 
 ## Product photos
 
