@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
+import { cards as CARD_IDS } from "./data";
 
 // Hero background: burning bills, ash and cards.
 
 const N_BILLS = 24;
-const N_CARDS = 12;
+const N_CARDS = CARD_IDS.length;
 const N_ASH = 700;
 
 const CURTAIN_VERT = `varying vec2 vUv;
@@ -40,7 +41,7 @@ void main(){
   vW = w.xyz;
   gl_Position = projectionMatrix * viewMatrix * w;
 }`;
-const BILL_FRAG = `uniform sampler2D uMap;
+const BILL_FRAG = `uniform sampler2D uMap; uniform sampler2D uBack;
 varying vec2 vUv; varying float vBurn; varying vec3 vW; varying float vSeed;
 float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 float noise(vec2 p){
@@ -55,7 +56,9 @@ void main(){
   if (d < 0.0) discard;
   float rim = smoothstep(0.12, 0.0, d) * step(0.001, vBurn);
   float soot = smoothstep(0.35, 0.0, d) * step(0.001, vBurn);
-  vec3 paper = texture2D(uMap, vUv).rgb;
+  vec3 paper = gl_FrontFacing
+    ? texture2D(uMap, vUv).rgb
+    : texture2D(uBack, vec2(1.0 - vUv.x, vUv.y)).rgb;
   float light = 0.3 + 0.9 * exp(-vW.x * vW.x / 40.0) * smoothstep(5.5, -4.0, vW.y);
   vec3 col = paper * light * vec3(1.0, 0.8, 0.62);
   col = mix(col, vec3(0.03), soot * 0.85);
@@ -92,54 +95,6 @@ function canvasTexture(T, w, h, draw) {
   t.colorSpace = T.SRGBColorSpace;
   t.anisotropy = 4;
   return t;
-}
-function drawBill(g) {
-  g.fillStyle = "#d8d8d2";
-  g.fillRect(0, 0, 512, 224);
-  g.strokeStyle = "#2c2c2a";
-  g.lineWidth = 9;
-  g.strokeRect(10, 10, 492, 204);
-  g.lineWidth = 2.5;
-  g.strokeRect(26, 26, 460, 172);
-  g.globalAlpha = 0.25;
-  for (let i = 0; i < 16; i++) {
-    for (const cx of [86, 426]) {
-      g.beginPath();
-      g.arc(cx, 112, 22 + i * 5, 0, 6.3);
-      g.stroke();
-    }
-  }
-  g.globalAlpha = 1;
-  g.fillStyle = "#e8e8e2";
-  g.beginPath();
-  g.ellipse(256, 112, 74, 74, 0, 0, 6.3);
-  g.fill();
-  g.lineWidth = 3;
-  g.stroke();
-  g.fillStyle = "#2c2c2a";
-  g.textAlign = "center";
-  g.textBaseline = "middle";
-  g.font = "bold 70px serif";
-  g.fillText("20", 256, 116);
-  g.font = "bold 34px serif";
-  g.fillText("20", 66, 54);
-  g.fillText("20", 446, 172);
-}
-function drawCardFace(g) {
-  g.fillStyle = "#e9e9e6";
-  g.fillRect(0, 0, 256, 358);
-  g.strokeStyle = "#1c1c1c";
-  g.lineWidth = 10;
-  g.strokeRect(5, 5, 246, 348);
-  g.fillStyle = "#a9a9a4";
-  g.fillRect(24, 58, 208, 156);
-  g.fillStyle = "#1c1c1c";
-  g.fillRect(24, 26, 120, 18);
-  for (let i = 0; i < 4; i++) g.fillRect(24, 240 + i * 24, 208 - i * 28, 8);
-  g.beginPath();
-  g.arc(128, 136, 40, 0, 6.3);
-  g.fillStyle = "#7c7c78";
-  g.fill();
 }
 function drawCardBack(g) {
   g.fillStyle = "#1e1e1e";
@@ -218,31 +173,36 @@ export default function AshScene() {
       scene.add(curtain);
 
       // Cards in the dark
+      const loader = new T.TextureLoader();
+      const image = (path) => {
+        const t = keep(loader.load(import.meta.env.BASE_URL + path));
+        t.colorSpace = T.SRGBColorSpace;
+        t.anisotropy = 4;
+        return t;
+      };
       const cardGeo = keep(new T.BoxGeometry(0.63, 0.88, 0.01));
       const edge = keep(new T.MeshBasicMaterial({ color: 0x5a4a40 }));
-      const face = keep(
-        new T.MeshBasicMaterial({
-          map: keep(canvasTexture(T, 256, 358, drawCardFace)),
-          color: 0x6e5a4c,
-        }),
-      );
       const back = keep(
         new T.MeshBasicMaterial({
           map: keep(canvasTexture(T, 256, 358, drawCardBack)),
           color: 0x6e5a4c,
         }),
       );
-      const cards = new T.InstancedMesh(
-        cardGeo,
-        [edge, edge, edge, edge, face, back],
-        N_CARDS,
-      );
-      cards.frustumCulled = false;
-      scene.add(cards);
+      const cards = CARD_IDS.map((id) => {
+        const face = keep(
+          new T.MeshBasicMaterial({
+            map: image(`cards/${id}.jpg`),
+            color: 0xb3a191,
+          }),
+        );
+        const m = new T.Mesh(cardGeo, [edge, edge, edge, edge, face, back]);
+        m.frustumCulled = false;
+        scene.add(m);
+        return m;
+      });
 
       // Bills that burn
-      const billMap = keep(canvasTexture(T, 512, 224, drawBill));
-      const billGeo = keep(new T.PlaneGeometry(1, 0.44));
+      const billGeo = keep(new T.PlaneGeometry(1, 0.42));
       const burn = new Float32Array(N_BILLS);
       billGeo.setAttribute(
         "aBurn",
@@ -254,7 +214,10 @@ export default function AshScene() {
           new T.ShaderMaterial({
             vertexShader: BILL_VERT,
             fragmentShader: BILL_FRAG,
-            uniforms: { uMap: { value: billMap } },
+            uniforms: {
+              uMap: { value: image("bills/20-front.jpg") },
+              uBack: { value: image("bills/20-back.jpg") },
+            },
             side: T.DoubleSide,
           }),
         ),
@@ -351,14 +314,12 @@ export default function AshScene() {
         seed: rand() * 100,
       }));
       function spawnCard(c, anywhere) {
-        c.x = sideX() * (0.9 + rand() * 0.3);
+        // Cards sit deeper, so push them wider to clear the headline
+        c.x = (0.6 + rand() * 0.7) * halfW * (rand() < 0.5 ? -1 : 1);
         c.y = anywhere ? (rand() * 2 - 1) * halfH : -halfH - 1 - rand() * 2;
-        c.z = -9 + rand() * 4;
+        c.z = -8 + rand() * 4;
         c.vy = 0.12 + rand() * 0.16;
-        c.rx = rand() * 6.3;
-        c.ry = rand() * 6.3;
-        c.wx = (rand() - 0.5) * 0.6;
-        c.wy = (rand() - 0.5) * 0.8;
+        c.tilt = (rand() - 0.5) * 0.5;
       }
       cs.forEach((c) => spawnCard(c, true));
       let ashCursor = 0;
@@ -424,20 +385,19 @@ export default function AshScene() {
         // Cards
         cs.forEach((c, i) => {
           c.y += c.vy * dt;
-          c.rx += c.wx * dt;
-          c.ry += c.wy * dt;
           if (c.y > halfH + 2.5) spawnCard(c, false);
-          dummy.position.set(
+          cards[i].position.set(
             c.x + Math.sin(clock * 0.4 + c.seed) * 0.3,
             c.y,
             c.z,
           );
-          dummy.rotation.set(c.rx, c.ry, 0);
-          dummy.scale.setScalar(1);
-          dummy.updateMatrix();
-          cards.setMatrixAt(i, dummy.matrix);
+          cards[i].rotation.set(
+            Math.sin(clock * 0.5 + c.seed) * 0.35,
+            Math.sin(clock * 0.4 + c.seed * 2) * 0.7,
+            c.tilt,
+          );
+          cards[i].scale.setScalar(halfW < 4 ? 0.9 : 1.5);
         });
-        cards.instanceMatrix.needsUpdate = true;
 
         // Ash
         for (let i = 0; i < N_ASH; i++) {
@@ -526,7 +486,6 @@ export default function AshScene() {
         io.disconnect();
         window.removeEventListener("pointermove", onPointer);
         disposables.forEach((o) => o.dispose());
-        cards.dispose();
         bills.dispose();
         renderer.dispose();
         renderer.domElement.remove();

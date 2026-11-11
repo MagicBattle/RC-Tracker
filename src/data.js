@@ -137,3 +137,9 @@ export function changeSince(history, days) {
       ) / 100
     : null;
 }
+
+// Chase cards shown in the hero
+export const cards = [
+  610516, 610511, 676096, 676088, 642623, 642289, 662184, 662185, 654527,
+  654526, 684339, 684342,
+];
