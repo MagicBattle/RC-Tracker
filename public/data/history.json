@@ -1492,6 +1492,51 @@
           "updatedAt": null
         }
       ]
+    },
+    {
+      "date": "2026-11-11",
+      "fetchedAt": "2026-11-11T22:51:13.207Z",
+      "prices": {
+        "622770": 238.98,
+        "630687": 260.69,
+        "630688": 240.57,
+        "644282": 190.91,
+        "648415": 170.4,
+        "654135": 269.09,
+        "668497": 318.79,
+        "672394": 169.53,
+        "672404": 114.27
+      },
+      "sources": [
+        {
+          "group": 23821,
+          "updatedAt": null
+        },
+        {
+          "group": 24541,
+          "updatedAt": null
+        },
+        {
+          "group": 24325,
+          "updatedAt": null
+        },
+        {
+          "group": 24326,
+          "updatedAt": null
+        },
+        {
+          "group": 24448,
+          "updatedAt": null
+        },
+        {
+          "group": 24380,
+          "updatedAt": null
+        },
+        {
+          "group": 24587,
+          "updatedAt": null
+        }
+      ]
     }
   ]
 }
