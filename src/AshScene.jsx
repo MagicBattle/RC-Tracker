@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-// A curtain of light rises from the floor. Bills ride the heat up through it,
-// catch, and burn into ash before they reach the text. Pulled cards drift behind.
+// Hero background: burning bills, ash and cards.
 
 const N_BILLS = 24;
 const N_CARDS = 12;
@@ -26,7 +25,7 @@ void main(){
   float base = horiz * vert;
   float flick = 0.92 + 0.08 * sin(t * 7.0 + x * 3.0) * sin(t * 3.3);
   float c = (base * (0.14 + s * shimmer) + pow(base, 3.0) * 0.4) * flick;
-  // Firelight ramp: soot, deep red, ember, white-hot core
+  // Fire colors
   vec3 col = mix(vec3(0.0), vec3(0.42, 0.07, 0.02), smoothstep(0.0, 0.22, c));
   col = mix(col, vec3(1.0, 0.42, 0.12), smoothstep(0.18, 0.62, c));
   col = mix(col, vec3(1.0, 0.86, 0.64), smoothstep(0.62, 1.15, c));
@@ -195,7 +194,7 @@ export default function AshScene() {
       const disposables = [];
       const keep = (o) => (disposables.push(o), o);
 
-      // Light curtain, drawn behind everything
+      // Background light
       const curtainU = {
         uTime: { value: 0 },
         uRise: { value: reduced ? 1 : 0 },
@@ -321,7 +320,7 @@ export default function AshScene() {
 
       const dummy = new T.Object3D();
       const rand = Math.random;
-      // Keep bills out of the middle third where the headline sits.
+      // Keep bills away from the headline
       const sideX = () => {
         const edgeMin = Math.min(1.4, halfW * 0.2);
         const x = edgeMin + rand() * Math.max(halfW - edgeMin, 0.5);
@@ -455,7 +454,7 @@ export default function AshScene() {
         ashGeo.attributes.aSize.needsUpdate = true;
       }
 
-      // Pointer parallax with a little spring, decorative only
+      // Mouse parallax
       const ptr = { x: 0, y: 0 };
       const cam = { x: 0, y: 0, vx: 0, vy: 0 };
       const onPointer = (e) => {
@@ -493,7 +492,7 @@ export default function AshScene() {
         last = now;
         const t = (now - start) / 1000;
         const clock = now / 1000;
-        // The curtain rises once, with a strong ease-out.
+        // Light rises once on load
         const k = Math.min(t / 2.4, 1);
         curtainU.uRise.value = 1 - Math.pow(1 - k, 4);
         curtainU.uTime.value = clock;

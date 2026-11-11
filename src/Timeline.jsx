@@ -12,14 +12,14 @@ function useWidth() {
   return [ref, width];
 }
 
-// Round a step up to 1, 2 or 5 times a power of ten.
+// Round to a nice axis step
 function niceStep(raw) {
   const pow = 10 ** Math.floor(Math.log10(raw));
   const f = raw / pow;
   return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * pow;
 }
 
-// points: [{ date, time, value }]. baseline draws the paid level and fills the gap.
+// Price chart. points: [{ date, time, value }]
 export default function Timeline({
   points,
   selected,

@@ -4,8 +4,7 @@ const reduced =
   typeof matchMedia !== "undefined" &&
   matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Animates a number toward target. The first run (and each restart) waits
-// for delay and takes duration. Later changes take a short fixed time.
+// Animates a number toward target.
 export function useTween(
   target,
   { delay = 0, duration = 1800 } = {},

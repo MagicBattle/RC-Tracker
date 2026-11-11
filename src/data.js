@@ -102,13 +102,13 @@ export const inventory = [
 export const cents = (n) => Math.round(n * 100);
 export const cost =
   inventory.reduce((sum, p) => sum + cents(p.msrp) * p.qty, 0) / 100;
-// First day tracked: the release of the oldest product.
+// Oldest release date
 export const startedOn = inventory.reduce(
   (a, p) => (p.released < a ? p.released : a),
   inventory[0].released,
 );
 export const isOut = (p, date) => !date || date >= p.released;
-// A product that was not out yet on that date counts at MSRP (no gain yet).
+// Unreleased products count at MSRP
 export function total(prices, date) {
   if (
     inventory.some(

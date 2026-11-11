@@ -1,10 +1,8 @@
-# Fills public/data/history.json with past prices from TCGCSV's daily archives.
-# One point a week from the oldest product's release, plus each release day.
-# Needs py7zr (pip install py7zr) and curl.
+# Fills in past prices from TCGCSV archives. Needs py7zr and curl.
 import datetime, json, pathlib, subprocess, time
 import py7zr
 
-# product id: (TCGplayer group, first day it was out)
+# id: (group, release date)
 products = {
     622770: (23821, "2025-03-09"),  # Prismatic Evolutions SPC
     630687: (24325, "2025-07-18"),  # Black Bolt ETB

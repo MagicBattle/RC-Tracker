@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-// Official TCGplayer product photo for a product ID. Tries the copy saved
-// in public/products first (npm run images), then TCGplayer's CDN.
+// Product photo. Uses the saved copy first, then TCGplayer.
 export default function ProductImg({ id, className, onState }) {
   const sources = [
     `${import.meta.env.BASE_URL}products/${id}.jpg`,

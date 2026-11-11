@@ -1,6 +1,4 @@
-// Downloads the official TCGplayer photo for every product into
-// public/products/<id>.jpg so the site works without the CDN.
-// Run: npm run images
+// Saves product photos to public/products. Run: npm run images
 import { mkdir, writeFile } from "node:fs/promises";
 import { inventory } from "../src/data.js";
 

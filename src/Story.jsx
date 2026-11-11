@@ -5,7 +5,7 @@ import ProductImg from "./ProductImg";
 const clamp = (x, a = 0, b = 1) => Math.min(Math.max(x, a), b);
 const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Calls update(progress) while a tall section scrolls past a sticky frame.
+// Scroll progress for a sticky section
 function useScrollProgress(ref, update, deps) {
   useEffect(() => {
     let raf = 0;
@@ -31,7 +31,7 @@ function useScrollProgress(ref, update, deps) {
   }, deps);
 }
 
-// A sentence that lights up word by word. parts: [[text, isEmber], ...]
+// Sentence that lights up word by word
 export function Statement({ parts }) {
   const section = useRef(null);
   const words = useRef([]);
@@ -73,7 +73,7 @@ export function Statement({ parts }) {
   );
 }
 
-// Each product is dealt onto a pile while the missed total counts up.
+// Products dealt onto a pile
 export function DealtCards({ rows }) {
   const section = useRef(null);
   const cards = useRef([]);
@@ -181,7 +181,7 @@ export function DealtCards({ rows }) {
   );
 }
 
-// Adds .in to [data-reveal] elements once they enter the viewport.
+// Fade in [data-reveal] elements on scroll
 export function useReveal(deps) {
   useEffect(() => {
     const els = document.querySelectorAll("[data-reveal]:not(.in)");
